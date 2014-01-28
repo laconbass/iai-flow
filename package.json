@@ -1,0 +1,41 @@
+{
+  "name": "iai-flow",
+  "version": "0.0.0",
+  "description": "Tiny utility to define those methods that effectively are aynchronous operation sequences (aka asynchronous code flows). Sometimes code must be complex, but never should be unredable.",
+  "main": "lib/index.js",
+  "directories": {
+    "example": "example",
+    "test": "test",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/laconbass/iai-flow"
+  },
+  "keywords": [
+    "iai",
+    "async",
+    "asynchronous",
+    "flow",
+    "control",
+    "utility",
+    "util"
+  ],
+  "author": "Lorenzo García Rivera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laconbass/iai-flow/issues"
+  },
+  "homepage": "https://github.com/laconbass/iai-flow",
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "chai": "~1.8.1"
+  },
+  "dependencies": {
+    "iai-is": "~1.3.0",
+    "iai-oop": "~1.2.0"
+  }
+}
