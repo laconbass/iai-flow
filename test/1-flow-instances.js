@@ -2,8 +2,8 @@ var assert = require( 'chai' ).assert
   , flow = require( '..' )
 ;
 
-describe( 'the flow function', function(){
-  it('should be a function', function(){
+describe( 'the flow module', function(){
+  it('should export a function', function(){
     assert.isFunction( flow );
   });
 })
@@ -12,7 +12,7 @@ describe('flow api', function(){
   var subject;
 
   beforeEach(function(){
-    subject = flow( 'testing flow' );
+    subject = flow( 'testing flow return value' );
   })
 
   it('should be functions', function(){
@@ -83,3 +83,22 @@ describe('flow api', function(){
     })
   })
 });
+
+// api examples
+
+var resolve = require('path').resolve
+  , fs = require('fs')
+  , exampledir = resolve( process.cwd(), 'example' )
+;
+
+describe( "api examples", function(){
+  console.log( fs.readdirSync( exampledir ) )
+  fs.readdirSync( exampledir ).forEach(function( filename ){
+    it( "example " + filename, function( done ){
+      var example = require( resolve( exampledir, filename ) );
+      assert.isFunction( example, "example should export a function" );
+      assert.equal( example.length, 1, "example function should expect 1 argument" );
+      example( done );
+    });
+  })
+})
