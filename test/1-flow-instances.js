@@ -92,7 +92,7 @@ var resolve = require('path').resolve
 ;
 
 describe( "api examples", function(){
-  console.log( fs.readdirSync( exampledir ) )
+  //console.log( fs.readdirSync( exampledir ) )
   fs.readdirSync( exampledir ).forEach(function( filename ){
     it( "example " + filename, function( done ){
       var example = require( resolve( exampledir, filename ) );
